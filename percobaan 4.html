@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transisi Energi Terbarukan Indonesia - EcoNusantara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #fffde7;
+            --light-yellow: #fff9c4;
+            --accent-yellow: #ffd54f;
+            --dark-yellow: #ffa000;
+            --solar-orange: #ff9800;
+            --wind-blue: #4fc3f7;
+            --geothermal-green: #4caf50;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-yellow);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark-yellow);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--accent-yellow);
+            font-size: 1.8rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--primary-yellow);
+            color: var(--dark-yellow);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-yellow);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* Article Hero */
+        .article-hero {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--accent-yellow) 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .article-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--accent-yellow);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .article-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-yellow);
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .meta-item i {
+            color: var(--accent-yellow);
+        }
+
+        /* Article Content */
+        .article-content {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            margin: -40px auto 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            position: relative;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--accent-yellow) 100%);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-yellow);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-section {
+            margin-bottom: 40px;
+        }
+
+        .article-section h2 {
+            font-size: 1.8rem;
+            color: var(--dark-yellow);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-yellow);
+        }
+
+        .article-section p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: var(--primary-yellow);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-yellow);
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--dark-yellow);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Energy Sources Grid */
+        .energy-sources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .energy-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-top: 5px solid;
+        }
+
+        .energy-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .energy-card.solar {
+            border-color: var(--solar-orange);
+        }
+
+        .energy-card.wind {
+            border-color: var(--wind-blue);
+        }
+
+        .energy-card.geothermal {
+            border-color: var(--geothermal-green);
+        }
+
+        .energy-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .energy-card.solar .energy-icon {
+            color: var(--solar-orange);
+        }
+
+        .energy-card.wind .energy-icon {
+            color: var(--wind-blue);
+        }
+
+        .energy-card.geothermal .energy-icon {
+            color: var(--geothermal-green);
+        }
+
+        .energy-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .energy-card.solar .stat-value {
+            color: var(--solar-orange);
+        }
+
+        .energy-card.wind .stat-value {
+            color: var(--wind-blue);
+        }
+
+        .energy-card.geothermal .stat-value {
+            color: var(--geothermal-green);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--light-yellow) 100%);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 50px 0;
+        }
+
+        .roadmap-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-yellow);
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--accent-yellow);
+            border-radius: 2px;
+        }
+
+        .roadmap-phase {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .phase-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .roadmap-phase:nth-child(odd) .phase-content {
+            left: 0;
+        }
+
+        .roadmap-phase:nth-child(even) .phase-content {
+            left: 55%;
+        }
+
+        .phase-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-yellow);
+            border-radius: 50%;
+        }
+
+        .roadmap-phase:nth-child(odd) .phase-content::before {
+            right: -50px;
+        }
+
+        .roadmap-phase:nth-child(even) .phase-content::before {
+            left: -50px;
+        }
+
+        .phase-year {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-yellow);
+            margin-bottom: 15px;
+        }
+
+        .phase-target {
+            background: var(--primary-yellow);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--accent-yellow);
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-yellow);
+            margin-bottom: 10px;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .comparison-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-yellow);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .comparison-card.renewable {
+            border-top: 4px solid var(--geothermal-green);
+        }
+
+        .comparison-card.fossil {
+            border-top: 4px solid #f44336;
+        }
+
+        .comparison-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .comparison-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .comparison-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--geothermal-green);
+            font-weight: bold;
+        }
+
+        .comparison-list.fossil li::before {
+            content: '✗';
+            color: #f44336;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background-color: var(--primary-yellow);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-yellow);
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Action Section */
+        .action-section {
+            background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--accent-yellow) 100%);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .action-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .action-section p {
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: var(--accent-yellow);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-yellow);
+            color: var(--accent-yellow);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-yellow);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-yellow);
+            color: var(--white);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1 1 250px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-yellow);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-yellow);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--light-yellow);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+
+            .article-content {
+                padding: 30px;
+                margin-top: -20px;
+            }
+
+            .article-image {
+                height: 250px;
+                font-size: 3rem;
+            }
+
+            .energy-sources {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap-timeline::before {
+                left: 30px;
+            }
+
+            .phase-content {
+                width: calc(100% - 80px);
+                left: 80px !important;
+            }
+
+            .phase-content::before {
+                left: -50px !important;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-hero {
+                padding: 60px 0 40px;
+            }
+
+            .article-hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .article-content {
+                padding: 20px;
+            }
+
+            .article-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="percobaan.html" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoNusantara</span>
+                </a>
+                <a href="percobaan.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Kembali ke Beranda
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container">
+            <div class="article-hero-content">
+                <div class="article-badge">Energi Berkelanjutan</div>
+                <h1>Transisi Energi Terbarukan Indonesia</h1>
+                <p>Potensi energi surya, angin, dan panas bumi untuk mencapai net zero emission 2060</p>
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Tim EcoNusantara</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>25 November 2023</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>12 menit membaca</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="container">
+        <article class="article-content">
+            <!-- Main Image -->
+            <div class="article-image">
+                <i class="fas fa-solar-panel"></i>
+            </div>
+
+            <div class="article-section">
+                <h2>Menuju Indonesia Net Zero Emission 2060</h2>
+                <p>Indonesia telah berkomitmen untuk mencapai net zero emission pada tahun 2060 melalui transisi besar-besaran menuju energi terbarukan. Sebagai negara dengan potensi energi terbarukan yang melimpah, Indonesia memiliki peluang besar untuk menjadi pemimpin regional dalam transisi energi bersih.</p>
+                
+                <p>Dengan posisi strategis di garis khatulistiwa, Indonesia memiliki potensi energi surya yang sangat besar, ditambah dengan potensi energi angin di wilayah pesisir dan energi panas bumi sebagai pemilik 40% cadangan panas bumi dunia.</p>
+                
+                <div class="highlight-box">
+                    <h3>Target Nasional Energi Terbarukan</h3>
+                    <p>Pemerintah menargetkan bauran energi terbarukan sebesar 23% pada 2025 dan 31% pada 2050, dengan investasi sebesar USD 1.2 triliun untuk infrastruktur energi bersih hingga 2060.</p>
+                </div>
+            </div>
+
+            <!-- Energy Sources Grid -->
+            <div class="energy-sources">
+                <div class="energy-card solar">
+                    <div class="energy-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Energi Surya</h3>
+                    <p>Potensi 207.8 GWp dengan intensitas radiasi matahari 4.8 kWh/m²/hari</p>
+                    <div class="energy-stats">
+                        <div class="stat">
+                            <div class="stat-value">0.2 GW</div>
+                            <div class="stat-label">Kapasitas Terpasang</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">207.8 GW</div>
+                            <div class="stat-label">Potensi Total</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="energy-card wind">
+                    <div class="energy-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Energi Angin</h3>
+                    <p>Potensi 60.6 GW dengan kecepatan angin 3-6 m/detik di wilayah pesisir</p>
+                    <div class="energy-stats">
+                        <div class="stat">
+                            <div class="stat-value">0.15 GW</div>
+                            <div class="stat-label">Kapasitas Terpasang</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">60.6 GW</div>
+                            <div class="stat-label">Potensi Total</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="energy-card geothermal">
+                    <div class="energy-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Energi Panas Bumi</h3>
+                    <p>Potensi 29.5 GW sebagai pemilik 40% cadangan panas bumi dunia</p>
+                    <div class="energy-stats">
+                        <div class="stat">
+                            <div class="stat-value">2.3 GW</div>
+                            <div class="stat-label">Kapasitas Terpasang</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">29.5 GW</div>
+                            <div class="stat-label">Potensi Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-section">
+                <h2>Roadmap Transisi Energi 2020-2060</h2>
+                <p>Transisi menuju energi terbarukan dilakukan melalui empat fase utama yang dirancang untuk memastikan ketahanan energi dan pertumbuhan ekonomi berkelanjutan.</p>
+            </div>
+
+            <!-- Roadmap Timeline -->
+            <div class="roadmap-section">
+                <h3 class="roadmap-title">Peta Jalan Transisi Energi Nasional</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-phase">
+                        <div class="phase-content">
+                            <div class="phase-year">2020-2025</div>
+                            <h4>Fase Persiapan & Akselerasi Awal</h4>
+                            <p>Pengembangan proyek percontohan dan peningkatan kapasitas infrastruktur dasar</p>
+                            <div class="phase-target">
+                                <strong>Target:</strong> 23% bauran energi terbarukan
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-content">
+                            <div class="phase-year">2025-2035</div>
+                            <h4>Fase Transformasi Sistem</h4>
+                            <p>Pembangunan masif PLTS atap dan pembangkit skala utilitas</p>
+                            <div class="phase-target">
+                                <strong>Target:</strong> 31% bauran energi terbarukan
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-content">
+                            <div class="phase-year">2035-2050</div>
+                            <h4>Fase Dekarbonisasi Mendalam</h4>
+                            <p>Integrasi smart grid dan pengembangan hydrogen economy</p>
+                            <div class="phase-target">
+                                <strong>Target:</strong> 57% bauran energi terbarukan
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-content">
+                            <div class="phase-year">2050-2060</div>
+                            <h4>Fase Net Zero Emission</h4>
+                            <p>Pencapaian net zero emission dengan teknologi carbon capture</p>
+                            <div class="phase-target">
+                                <strong>Target:</strong> 100% energi bersih
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="article-section">
+                <h2>Manfaat Transisi Energi Terbarukan</h2>
+                <p>Transisi menuju energi terbarukan tidak hanya tentang pengurangan emisi, tetapi juga membawa manfaat ekonomi dan sosial yang signifikan bagi Indonesia.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="benefit-title">Penciptaan Lapangan Kerja</div>
+                    <p>3.2 juta pekerjaan hijau baru hingga 2030 di sektor energi terbarukan</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="benefit-title">Penghematan Biaya</div>
+                    <p>Pengurangan biaya impor BBM senilai USD 8.4 miliar per tahun</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="benefit-title">Kesehatan Masyarakat</div>
+                    <p>Penurunan 40% penyakit pernapasan akibat polusi udara</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-title">Ketahanan Energi</div>
+                    <p>Pengurangan ketergantungan pada impor energi fosil</p>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="comparison-section">
+                <h3 class="comparison-title">Energi Terbarukan vs Energi Fosil</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card renewable">
+                        <div class="comparison-header" style="color: var(--geothermal-green);">Energi Terbarukan</div>
+                        <ul class="comparison-list">
+                            <li>Emisi karbon minimal hingga nol</li>
+                            <li>Biaya operasional rendah</li>
+                            <li>Sumber energi tak terbatas</li>
+                            <li>Menciptakan lapangan kerja lokal</li>
+                            <li>Meningkatkan ketahanan energi</li>
+                            <li>Ramah lingkungan dan berkelanjutan</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card fossil">
+                        <div class="comparison-header" style="color: #f44336;">Energi Fosil</div>
+                        <ul class="comparison-list fossil">
+                            <li>Emisi karbon tinggi</li>
+                            <li>Biaya bahan bakar fluktuatif</li>
+                            <li>Sumber energi terbatas</li>
+                            <li>Ketergantungan impor</li>
+                            <li>Dampak lingkungan negatif</li>
+                            <li>Subsidi pemerintah besar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-item">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-wind"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-charging-station"></i>
+                </div>
+            </div>
+
+            <div class="article-section">
+                <h2>Tantangan dan Strategi</h2>
+                <p>Meskipun potensi besar, transisi energi terbarukan menghadapi beberapa tantangan utama yang membutuhkan strategi komprehensif.</p>
+                
+                <div class="highlight-box">
+                    <h3>Tantangan Utama</h3>
+                    <p><strong>Investasi:</strong> Kebutuhan investasi USD 1.2 triliun hingga 2060</p>
+                    <p><strong>Teknologi:</strong> Penguasaan teknologi dan kapasitas manufaktur lokal</p>
+                    <p><strong>Infrastruktur:</strong> Penguatan grid dan sistem transmisi</p>
+                    <p><strong>Regulasi:</strong> Harmonisasi kebijakan dan insentif</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Strategi Penanganan</h3>
+                    <p><strong>Green Financing:</strong> Skema pembiayaan inovatif dan green bonds</p>
+                    <p><strong>Technology Transfer:</strong> Kerjasama internasional dan pengembangan SDM</p>
+                    <p><strong>Grid Modernization:</strong> Smart grid dan sistem storage</p>
+                    <p><strong>Policy Reform:</strong> Reformasi subsidi dan carbon pricing</p>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <h2>Dukung Transisi Energi Bersih Indonesia</h2>
+                <p>Setiap langkah menuju energi terbarukan adalah investasi untuk masa depan yang lebih bersih dan berkelanjutan.</p>
+                
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EcoNusantara</h3>
+                    <p>Platform pemantauan lingkungan Indonesia untuk mendukung pembangunan berkelanjutan dan pelestarian alam.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Artikel Terkait</h3>
+                    <ul class="footer-links">
+                        <li><a href="artikel-mangrove.html">Restorasi Hutan Mangrove Indonesia</a></li>
+                        <li><a href="artikel-sampah-plastik.html">Pengelolaan Sampah Plastik di Laut</a></li>
+                        <li><a href="#">Konservasi Terumbu Karang</a></li>
+                        <li><a href="#">Pengendalian Kebakaran Hutan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Gedung Kementerian Lingkungan Hidup, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@econusantara.id</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EcoNusantara. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate energy cards on scroll
+            const energyCards = document.querySelectorAll('.energy-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            energyCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Animate roadmap phases
+            const roadmapPhases = document.querySelectorAll('.phase-content');
+            const roadmapObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            roadmapPhases.forEach(phase => {
+                phase.style.opacity = '0';
+                if (phase.parentElement.classList.contains('roadmap-phase:nth-child(odd)')) {
+                    phase.style.transform = 'translateX(-50px)';
+                } else {
+                    phase.style.transform = 'translateX(50px)';
+                }
+                phase.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                roadmapObserver.observe(phase);
+            });
+
+            // Fade in content
+            const articleContent = document.querySelector('.article-content');
+            articleContent.style.opacity = '0';
+            articleContent.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                articleContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                articleContent.style.opacity = '1';
+                articleContent.style.transform = 'translateY(0)';
+            }, 300);
+
+            // Add hover effects to gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px) scale(1)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
